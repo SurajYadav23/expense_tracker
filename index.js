@@ -10,6 +10,8 @@ import premiumFeatureRouter from './routes/premiumFeature.js'
 import purchase from './routes/purchase.js'
 import cors from 'cors';
 import forgetpassword from './models/Forgotpassword.js';
+import path from 'path';
+
 
 const app = express();
 
