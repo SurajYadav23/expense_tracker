@@ -27,7 +27,7 @@ export const forgotpassword = async (req, res) => {
                 from: 'yadav9898s@gmail.com', 
                 to: email, 
                 subject: 'Reset Password', 
-                html: `<a href="http://localhost:5000/password/resetpassword/${id}">Reset password</a>`,
+                html: `<a href="http://3.110.123.247:5000/password/resetpassword/${id}">Reset password</a>`,
             };
 
           

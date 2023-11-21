@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
     console.log("good");
 });
 
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, `public/${req.url}`));
+})
+
 User.hasOne(forgetpassword);
 
 
