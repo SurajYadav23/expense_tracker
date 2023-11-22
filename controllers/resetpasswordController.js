@@ -62,7 +62,7 @@ export const resetpassword = (req, res) => {
                                     </script>
 
                                     <form action="/password/updatepassword/${id}" method="get">
-                                        <label for="newpassword">Enter New password</label>
+                                        <label for="newpassword">Enter Your New password</label>
                                         <input name="newpassword" type="password" required></input>
                                         <button>reset password</button>
                                     </form>
