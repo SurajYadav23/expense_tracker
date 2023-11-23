@@ -9,7 +9,7 @@ function addNewExpense(e) {
   console.log(expenseDetails);
   const token = localStorage.getItem('token');
   axios
-    .post('http://3.110.123.247:5000/api/v1/users/addexpense', expenseDetails, {
+    .post('http://13.233.251.79:5000/api/v1/users/addexpense', expenseDetails, {
       headers: { Authorization: token },
     })
     .then((response) => {
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showLeaderboard();
   }
   axios
-    .get('http://3.110.123.247:5000/api/v1/expense/my', {
+    .get('http://13.233.251.79:5000/api/v1/expense/my', {
       headers: { Authorization: token },
     })
     .then((response) => {
@@ -86,7 +86,7 @@ function addNewExpensetoUI(expense) {
 function deleteExpense(e, expenseid) {
   const token = localStorage.getItem('token');
   axios
-    .delete(`http://3.110.123.247:5000/api/v1/users/deleteexpense/${expenseid}`, {
+    .delete(`http://13.233.251.79:5000/api/v1/users/deleteexpense/${expenseid}`, {
       headers: { Authorization: token },
     })
     .then(() => {
@@ -107,7 +107,7 @@ function showLeaderboard() {
   inputElement.onclick = async () => {
     const token = localStorage.getItem('token');
     const userLeaderBoardArray = await axios.get(
-      'http://3.110.123.247:5000/api/v1/premium/showLeaderBoard',
+      'http://13.233.251.79:5000/api/v1/premium/showLeaderBoard',
       { headers: { Authorization: token } }
     );
     console.log(userLeaderBoardArray);
@@ -131,7 +131,7 @@ function removeExpensefromUI(expenseid) {
 document.getElementById('rzp-button1').onclick = async function (e) {
   const token = localStorage.getItem('token');
   const response = await axios.get(
-    'http://3.110.123.247:5000/api/v1/purchase/premiummembership',
+    'http://13.233.251.79:5000/api/v1/purchase/premiummembership',
     { headers: { Authorization: token } }
   );
   console.log(response);
@@ -140,7 +140,7 @@ document.getElementById('rzp-button1').onclick = async function (e) {
     order_id: response.data.order.id,
     handler: async function (response) {
       const res = await axios.post(
-        'http://3.110.123.247:5000/api/v1/purchase/updatetransactionstatus',
+        'http://13.233.251.79:5000/api/v1/purchase/updatetransactionstatus',
         {
           order_id: options.order_id,
           payment_id: response.razorpay_payment_id,
@@ -169,7 +169,7 @@ document.getElementById('rzp-button1').onclick = async function (e) {
 
 function download() {
   axios
-    .get('http://3.110.123.247:5000/api/v1/users/download', {
+    .get('http://13.233.251.79:5000/api/v1/users/download', {
       headers: { Authorization: localStorage.getItem('token') },
     })
     .then((response) => {

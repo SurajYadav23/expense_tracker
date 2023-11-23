@@ -8,7 +8,7 @@ function login(e) {
 
     }
     console.log(loginDetails)
-    axios.post('http://3.110.123.247:5000/api/v1/users/login',loginDetails).then(response => {
+    axios.post('http://13.233.251.79:5000/api/v1/users/login',loginDetails).then(response => {
             alert(response.data.message)
             console.log(response.data)
             localStorage.setItem('token', response.data.token)
